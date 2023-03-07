@@ -5,12 +5,12 @@ import reportWebVitals from './reportWebVitals';
 import App from './app/App';
 import {Provider} from 'react-redux';
 import {store} from './app/store';
-import {createBrowserRouter, Navigate, RouterProvider} from 'react-router-dom';
+import { createHashRouter, RouterProvider} from 'react-router-dom';
 import {TodolistsList} from './features/TodolistsList/TodolistsList';
 import {Login} from './features/Login/Login';
 
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: '/',
         element: <App/>,
