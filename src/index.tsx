@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
@@ -8,9 +8,8 @@ import {store} from './app/store';
 import {createHashRouter, RouterProvider} from 'react-router-dom';
 import {TodolistsList} from './features/TodolistsList/TodolistsList';
 import {Login} from './features/Login/Login';
-import {common, grey, orange} from '@mui/material/colors';
+import {common} from '@mui/material/colors';
 import {createTheme, ThemeProvider} from '@mui/material';
-
 
 const theme = createTheme({
     palette: {
