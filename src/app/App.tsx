@@ -49,9 +49,9 @@ function App() {
                         <Menu/>
                     </IconButton>
                     <Typography variant="h6">
-                        News
+                        Todolists
                     </Typography>
-                    {isLoggedIn && <Button color="inherit" onClick={logoutHanler}>Logout</Button>}
+                    {isLoggedIn && <Button style={{margin: '0 30px 0 auto'}} color="inherit" onClick={logoutHanler}>Logout</Button>}
                 </Toolbar>
                 {status === 'loading' && <LinearProgress/>}
             </AppBar>
