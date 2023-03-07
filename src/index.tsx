@@ -5,16 +5,26 @@ import reportWebVitals from './reportWebVitals';
 import App from './app/App';
 import {Provider} from 'react-redux';
 import {store} from './app/store';
-import { createHashRouter, RouterProvider} from 'react-router-dom';
+import {createHashRouter, RouterProvider} from 'react-router-dom';
 import {TodolistsList} from './features/TodolistsList/TodolistsList';
 import {Login} from './features/Login/Login';
+import {common, grey, orange} from '@mui/material/colors';
+import {createTheme, ThemeProvider} from '@mui/material';
 
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: common['black']
+        }
+    }
+})
 
 const router = createHashRouter([
     {
         path: '/',
         element: <App/>,
-        errorElement: <h1 style={{display:'flex', justifyContent: 'center'}}>ERROR 404</h1>,
+        errorElement: <h1 style={{display: 'flex', justifyContent: 'center'}}>ERROR 404</h1>,
         children: [
             {
                 path: '/',
@@ -34,7 +44,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
     <Provider store={store}>
-        <RouterProvider router={router}/>
+        <ThemeProvider theme={theme}>
+            <RouterProvider router={router}/>
+        </ThemeProvider>
     </Provider>
 );
 
